@@ -1,4 +1,3 @@
-// src/extension.js
 const vscode = require('vscode');
 const path = require('path');
 const fs = require('fs');
@@ -20,7 +19,7 @@ function activate(context) {
             scanWorkspaceForTodos(panel);
 
             panel.onDidDispose(() => {
-                panel = undefined; // Reset the panel so it can be recreated
+                panel = undefined;
             }, null, context.subscriptions);
 
             vscode.workspace.onDidSaveTextDocument(() => {
@@ -233,10 +232,7 @@ function activate(context) {
             </body>
             </html>
         `;
-    }
-    
-    
-      
+    }     
 }
 
 function deactivate() { }
