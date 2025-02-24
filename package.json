@@ -1,0 +1,50 @@
+{
+  "name": "tasks-todo",
+  "displayName": "Tasks ToDo",
+  "description": "Tasks ToDo – A simple and efficient VS Code extension that helps you track TODOs and reminders directly in your code. Easily view and manage all TODO comments in a dedicated panel, complete with filenames, line numbers, and priority levels. Perfect for staying organized while coding!",
+  "version": "1.0.0",
+  "icon": "assets/icon.png",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Notebooks",
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onCommand:taskToDO.showToDos"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "taskToDo.showTodos",
+        "title": "show ToDos"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test",
+    "compile": "vsce package",
+    "@vscode/vsce": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.97.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "eslint": "^9.19.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  },
+  "author": {
+    "name": "Divyanshu Kumar"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/div-tom1506/vscode-api-tester-extension"
+  },
+  "publisher": "div-tom1506"
+}
