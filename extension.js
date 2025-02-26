@@ -49,7 +49,7 @@ function activate(context) {
 
         const priorityMap = { HIGH: 1, MEDIUM: 2, LOW: 3 };
         let todos = [];
-        const regex = /(\/\/ TODO|\/\* TODO|# TODO|#TODO|\/\/TODO|\/\/ todo|\/\* todo|# todo|#todo|\/\/todo)\s*(?:\[(\d|HIGH|MEDIUM|LOW)\])?\s*(.*)/g;
+        const regex = /(\/\/ TODO|\/\* TODO|# TODO|#TODO|\/\/TODO|\/\/ todo|\/\* todo|# todo|#todo|\/\/todo|<!-- TODO|<!--TODO|<!-- todo|<!--todo)\s*(?:\[(\d|HIGH|MEDIUM|LOW)\])?\s*(.*?)\s*(?:-->|$)/g;
 
         function scanFile(filePath) {
             if (!fs.existsSync(filePath)) return;
