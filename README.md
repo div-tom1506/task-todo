@@ -12,7 +12,7 @@ Press `Ctrl+Shift+P` (`Cmd+Shift+P` on macOS) and select "Show ToDos".
 
 Insert a TODO comment in your code using the following format:
 
-JavaScript / TypeScript / Java / C++ / C#/ Go
+JavaScript / TypeScript / Java / C++ / C# / Go
 
 ```// TODO [1] Fix this bug```
 
@@ -21,6 +21,10 @@ JavaScript / TypeScript / Java / C++ / C#/ Go
 Python
 
 ```# TODO [2] Add error handling```
+
+HTML / XML
+
+```<!-- TODO [3] To make this output formated -->```
 
 **Priorities:** You can categorize TODOs based on urgency:
 
@@ -41,6 +45,10 @@ Use the filter dropdown in the WebView to display only high, medium, or low prio
 - [x] Priority-based filtering ([1], [2], [3]).
 - [x] Dark-themed UI.
 
+## Screenshot
+
+![Example](./assets/example.png)
+
 ## Future Enhancements
 
 **Navigating to TODOs:**
@@ -50,14 +58,6 @@ Click on a TODO item in the webview, and the file will open at the specific line
 **Removing TODOs:**
 
 Click on a marks as done button to remove TODO comments directly from the file.
-
-## Example
-```
-// TODO [1] Fix this function's logic
-// TODO [2] Optimize performance
-// TODO [3] Refactor variable names
-```
-The extension will list these TODOs in the Task ToDo panel with their priorities.
 
 ## Contributing
 
