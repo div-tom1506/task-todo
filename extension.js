@@ -49,7 +49,7 @@ function activate(context) {
 
         const priorityMap = { HIGH: 1, MEDIUM: 2, LOW: 3 };
         let todos = [];
-        const regex = /(\/\/ TODO|\/\* TODO|# TODO)\s*(?:\[(\d|HIGH|MEDIUM|LOW)\])?\s*(.*)/g;
+        const regex = /(\/\/ TODO|\/\* TODO|# TODO|#TODO|\/\/TODO|\/\/ todo|\/\* todo|# todo|#todo|\/\/todo)\s*(?:\[(\d|HIGH|MEDIUM|LOW)\])?\s*(.*)/g;
 
         function scanFile(filePath) {
             if (!fs.existsSync(filePath)) return;
@@ -72,7 +72,7 @@ function activate(context) {
                     todos.push({
                         line: index + 1,
                         text: match[3],
-                        fileName: filePath,
+                        fileName: path.basename(filePath),
                         priority,
                         priorityValue: priorityMap[priority]
                     });
@@ -85,7 +85,7 @@ function activate(context) {
                 const fullPath = path.join(directory, file);
                 if (fs.statSync(fullPath).isDirectory()) {
                     scanDirectory(fullPath);
-                } else if (fullPath.match(/\.(js|ts|py|java|cpp|cs|html|css)$/)) {
+                } else if (fullPath.match(/\.(js|ts|tsx|py|java|cpp|go|html|css)$/)) {
                     scanFile(fullPath);
                 }
             });
@@ -138,9 +138,9 @@ function activate(context) {
                     }
                     h2 { 
                         text-align: center;
-                        font-size: 28px; /* Increased size */
+                        font-size: 28px;
                         font-weight: bold;
-                        color: #9c27b0; /* Elegant purple */
+                        color: #9c27b0;
                         margin-bottom: 20px;
                     }
                     .container {
@@ -150,7 +150,7 @@ function activate(context) {
                     }
                     .filter-container {
                         position: relative; 
-                        top: 10px; /* Moved down slightly */
+                        top: 10px;
                         left: 0;
                         background: #2c2c2c;
                         padding: 8px 14px;
@@ -168,7 +168,7 @@ function activate(context) {
                         font-size: 14px;
                         background: #333;
                         color: #d4d4d4;
-                        border: 1px solid #6200ea; /* Subtle border color */
+                        border: 1px solid #6200ea;
                         border-radius: 4px;
                         cursor: pointer;
                     }
@@ -178,24 +178,27 @@ function activate(context) {
                         padding: 18px;
                         border-radius: 10px;
                         box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-                        margin-top: 30px; /* Increased margin for spacing */
+                        margin-top: 30px;
                     }
                     .todo-item {
-                        padding: 10px; /* Increased padding */
-                        margin: 6px 0; /* Adjusted spacing */
+                        padding: 10px;
+                        margin: 6px 0;
                         border-radius: 5px;
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
                         font-size: 15px;
-                        background: #333; /* Consistent dark color */
-                        border-left: 5px solid #6200ea; /* Subtle accent */
+                        background: #333;
+                        border-left: 5px solid;
                         transition: background 0.3s, transform 0.2s;
                     }
                     .todo-item:hover {
-                        background: #444; /* Slight highlight */
+                        background: #444;
                         transform: scale(1.02);
                     }
+                    .todo-item[data-priority="high"] { border-left-color: #ff5252; }
+                    .todo-item[data-priority="medium"] { border-left-color: #ffb74d; }
+                    .todo-item[data-priority="low"] { border-left-color: #66bb6a; }
                 </style>
             </head>
             <body>
@@ -214,7 +217,7 @@ function activate(context) {
                         <div id="todoContainer">
                             ${todos.map(todo => `
                                 <div class="todo-item" data-priority="${todo.priority.toLowerCase()}">
-                                    <span>${todo.priority} - ${todo.text} (${todo.fileName}:${todo.line})</span>
+                                    <span><strong>${todo.priority}</strong> - <b>${todo.text}</b> (${todo.fileName}:${todo.line})</span>
                                 </div>
                             `).join('')}
                         </div>
@@ -232,7 +235,7 @@ function activate(context) {
             </body>
             </html>
         `;
-    }     
+    }
 }
 
 function deactivate() { }

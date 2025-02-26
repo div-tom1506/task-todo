@@ -12,7 +12,7 @@ Press `Ctrl+Shift+P` (`Cmd+Shift+P` on macOS) and select "Show ToDos".
 
 Insert a TODO comment in your code using the following format:
 
-JavaScript / TypeScript / Java / C++ / C#
+JavaScript / TypeScript / Java / C++ / C#/ Go
 
 ```// TODO [1] Fix this bug```
 
@@ -37,7 +37,7 @@ Use the filter dropdown in the WebView to display only high, medium, or low prio
 ## Features
 
 - [x] Automatically scans TODOs across your project.
-- [x] Supports multiple programming languages (.js, .ts, .py, .java, .cpp, .cs, .html, .css).
+- [x] Supports multiple programming languages (.js, .ts, .py, .java, .cpp, .cs, .go, .html, .css).
 - [x] Priority-based filtering ([1], [2], [3]).
 - [x] Dark-themed UI.
 
