@@ -2,7 +2,7 @@
   "name": "tasks-todo",
   "displayName": "Tasks ToDo",
   "description": "Tasks ToDo – A simple and efficient VS Code extension that helps you track TODOs and reminders directly in your code. Easily view and manage all TODO comments in a dedicated panel, complete with filenames, line numbers, and priority levels. Perfect for staying organized while coding!",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "icon": "assets/icon.png",
   "engines": {
     "vscode": "^1.97.0"
