@@ -39,7 +39,7 @@ Use the filter dropdown in the WebView to display only high, medium, or low prio
 - [x] Automatically scans TODOs across your project.
 - [x] Supports multiple programming languages (.js, .ts, .py, .java, .cpp, .cs, .html, .css).
 - [x] Priority-based filtering ([1], [2], [3]).
-- [x] Dark-themed UI with hover effects for smooth interactions.
+- [x] Dark-themed UI.
 
 ## Future Enhancements
 
