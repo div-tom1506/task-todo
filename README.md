@@ -2,6 +2,9 @@
 
 A simple yet powerful VS Code extension to track and manage TODO comments in your code. It scans your workspace, lists all TODOs in a webview, and allows easy filtering based on priority.
 
+## VS Code Extension Link 
+### [tasks-todo](https://marketplace.visualstudio.com/items?itemName=div-tom1506.tasks-todo)
+
 ## Usage
 
 **Open the Tasks ToDo panel:**
